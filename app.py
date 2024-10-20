@@ -21,4 +21,5 @@ def summarize_patient():
     return jsonify({'summary': summary_text})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))  # Get the port from environment variable or use 5000 as default
+    app.run(host='0.0.0.0', port=port, debug=True)  # Bind to 0.0.0.0 and use the port
